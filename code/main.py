@@ -22,21 +22,22 @@ import datetime
 start_time = datetime.datetime.now()
 
 # inputs
-type_in = 'x_cubed_gap' 	# data type to use - drunk_bow_tie x_cubed_gap ~boston concrete
-loss_type = 'qd_soft' 		# loss type to train on - qd_soft mve mse (mse=simple point prediction)
+type_in = 'x_cubed_gap' 	# data type to use - drunk_bow_tie x_cubed_gap ~boston concrete ,
+				##CHANGE THE DATA TYPE AS PER UR USE
+loss_type = 'qd_soft' 		# loss type to train on - qd_soft mve mse (mse=simple point prediction) ## CHECK FOR DIFFERENT LOSSES
 n_samples = 100		# if generating data, how many points to generate
 h_size = [50]	# number of hidden units in network: [50]=layer_1 of 50, [8,4]=layer_1 of 8, layer_2 of 4
-alpha = 0.05		# data points captured = (1 - alpha)
+alpha = 0.05		# data points captured = (1 - alpha) ## FOR 95% PREDICTION INTERVAL
 n_epoch = 3000		# number epochs to train for
-optim = 'adam' 		# opitimiser - SGD adam
+optim = 'adam' 		# opitimiser - SGD adam ## ITS GRADIENT DESCENT BASED OPTIMISER 
 l_rate = 0.02		# learning rate of optimiser
 decay_rate=0.95		# learning rate decay
 soften = 160. 		# hyper param for QD_soft
 lambda_in = 15. 	# hyper param for QD_soft
 sigma_in=0.4 		# initialise std dev of NN weights
 is_run_test=False	# if averaging over lots of runs - turns off some prints and graphs
-n_ensemble=5		# number of individual NNs in ensemble
-n_bootstraps=1 		# how many boostrap resamples to perform
+n_ensemble=5		# number of individual NNs in ensemble ## CHECK
+n_bootstraps=1 		# how many boostrap resamples to perform  ##CHECK
 n_runs=20 if is_run_test else 1
 is_batch=True 		# train in batches?
 n_batch=100 		# batch size
