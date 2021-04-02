@@ -25,6 +25,8 @@ class TfNetwork:
 		soften=100., lambda_in=10., sigma_in=0.5, activation='relu', bias_rand=False, out_biases=[2.,-2.],
 		**kwargs):
 		"""
+		__init__ does THE INITIALIZATION
+		SELF IS USED IN CLASSES 
 		sets up network with
 		x_size is integer no. of input variables
 		y_size is integer no. of output nodes
