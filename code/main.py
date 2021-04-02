@@ -8,7 +8,7 @@ import DataGen
 import utils
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2' # avoids a warning
 
-importlib.reload(DeepNetPI)
+importlib.reload(DeepNetPI) ## check in colab notebook
 importlib.reload(DataGen)
 importlib.reload(utils)
 
