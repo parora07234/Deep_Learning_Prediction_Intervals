@@ -24,7 +24,7 @@ start_time = datetime.datetime.now()
 # inputs
 type_in = 'x_cubed_gap' 	# data type to use - drunk_bow_tie x_cubed_gap ~boston concrete ,
 				##CHANGE THE DATA TYPE AS PER UR USE
-loss_type = 'qd_soft' 		# loss type to train on - qd_soft mve mse (mse=simple point prediction) ## CHECK FOR DIFFERENT LOSSES
+loss_type = 'qd_soft' 		# loss type to train on - qd_soft mve mse (mse=simple point prediction) ## CHECK FOR DIFFERENT LOSSES (gauss_like,qd_soft,mse)
 n_samples = 100		# if generating data, how many points to generate
 h_size = [50]	# number of hidden units in network: [50]=layer_1 of 50, [8,4]=layer_1 of 8, layer_2 of 4
 alpha = 0.05		# data points captured = (1 - alpha) ## FOR 95% PREDICTION INTERVAL
@@ -37,7 +37,7 @@ lambda_in = 15. 	# hyper param for QD_soft
 sigma_in=0.4 		# initialise std dev of NN weights
 is_run_test=False	# if averaging over lots of runs - turns off some prints and graphs
 n_ensemble=5		# number of individual NNs in ensemble ## CHECK
-n_bootstraps=1 		# how many boostrap resamples to perform  ##CHECK
+n_bootstraps=1 		# how many boostrap resamples to perform  ## pick one sample and again put ANOTHER SAMPLE
 n_runs=20 if is_run_test else 1
 is_batch=True 		# train in batches?
 n_batch=100 		# batch size
@@ -45,7 +45,7 @@ lube_perc=90. 		# if model uncertainty method = perc - 50 to 100
 perc_or_norm='norm' # model uncertainty method - perc norm (paper uses norm)
 is_early_stop=False # stop training early (didn't use in paper)
 is_bootstrap=False if n_bootstraps == 1 else True
-train_prop=0.9 		# % of data to use as training
+train_prop=0.9 		# % of data to use as training 90% DATA IS USED FOR TRAINING
 
 out_biases=[3.,-3.] # chose biases for output layer (for mve is overwritten to 0,1)
 activation='relu' 	# NN activation fns - tanh relu
@@ -77,11 +77,11 @@ prop_select=0.8 # if jacknife (=prop_of_data), how much data to use each time
 in_ddof=1 if n_runs > 1 else 0 # this is for results over runs only
 
 # pre calcs
-if alpha == 0.05:
+if alpha == 0.05: ## FOR 95% PIS
 	n_std_devs = 1.96
-elif alpha == 0.10:
+elif alpha == 0.10: ##FOR 90% PIS
 	n_std_devs = 1.645
-elif alpha == 0.01:
+elif alpha == 0.01: ## FOR 99% PIS
 	n_std_devs = 2.575
 else:
 	raise Exception('ERROR unusual alpha')
