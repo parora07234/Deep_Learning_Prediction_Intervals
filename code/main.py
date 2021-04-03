@@ -94,8 +94,8 @@ for run in range(0,n_runs):
 	X_train, y_train, X_val, y_val = Gen.CreateData(n_samples=n_samples,seed_in=run,
 		train_prop=train_prop, bound_limit=bound_limit, n_std_devs=n_std_devs)
 
-	# print('\n--- view data ---')
-	# Gen.ViewData(n_rows=5, hist=False, plot=False)
+	print('\n--- view data ---')
+	Gen.ViewData(n_rows=5, hist=False, plot=False)
 
 	X_boundary = []
 	y_boundary = []
