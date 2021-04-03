@@ -37,7 +37,7 @@ class DataGenerator:
 		shift_c=1.0
 
 		# for ideal boundary
-# 		X_ideal = np.linspace(start=-bound_limit,stop=bound_limit, num=500)
+		X_ideal = np.linspace(start=-bound_limit,stop=bound_limit, num=50000)
 		y_ideal_U = np.ones_like(X_ideal)+1. # default
 		y_ideal_L = np.ones_like(X_ideal)-1.
 		y_ideal_mean = np.ones_like(X_ideal)+0.5
