@@ -150,7 +150,7 @@ class DataGenerator:
 				data = np.loadtxt(path, delimiter=',',skiprows=1)
 			elif self.type_in=="~wind":
 				path = 'canada_CSV.csv'
-				data = np.loadtxt(path,delimiter=','skiprows=1) ## CHECK WHTHER TO HAVE LOADTXT OR ANYTHING ELSE
+				data = np.loadtxt(path,delimiter=',',skiprows=1) ## CHECK WHTHER TO HAVE LOADTXT OR ANYTHING ELSE
 
 			# work out normalisation constants (need when unnormalising later)
 			scale_c = np.std(data[:,-1])
