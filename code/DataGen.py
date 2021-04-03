@@ -37,7 +37,7 @@ class DataGenerator:
 		shift_c=1.0
 
 		# for ideal boundary
-		X_ideal = np.linspace(start=-bound_limit,stop=bound_limit, num=500)
+# 		X_ideal = np.linspace(start=-bound_limit,stop=bound_limit, num=500)
 		y_ideal_U = np.ones_like(X_ideal)+1. # default
 		y_ideal_L = np.ones_like(X_ideal)-1.
 		y_ideal_mean = np.ones_like(X_ideal)+0.5
@@ -156,21 +156,21 @@ class DataGenerator:
 			scale_c = np.std(data[:,-1])
 			shift_c = np.mean(data[:,-1])
 
-			# normalise data
-			for i in range(0,data.shape[1]):
+			# normalise data for ALL COLUMNS
+			for i in range(0,data.shape[1]): ## i varies from 0 to number of columns ,means it reads one by one the columns
 				# avoid zero variance features (exist one or two)
 				sdev_norm = np.std(data[:,i])
 				sdev_norm = 0.001 if sdev_norm == 0 else sdev_norm
 				data[:,i] = (data[:,i] - np.mean(data[:,i]) )/sdev_norm
 
 			# split into train/test
-			perm = np.random.permutation(data.shape[0])
+			perm = np.random.permutation(data.shape[0]) ## DO THE DATA PERMUTATION OF ALL THE ROWS (shuffle)
 			train_size = int(round(train_prop*data.shape[0]))
 			train = data[perm[:train_size],:]
 			test = data[perm[train_size:],:]
 
-			y_train = train[:,-1].reshape(-1,1)
-			X_train = train[:,:-1]
+			y_train = train[:,-1].reshape(-1,1) ## LAST COLUMN IS CONSIDERED AS THE TARGET AND RESHAPED IN BETWEEN -1,1
+			X_train = train[:,:-1] ## INPUTS ARE ALL EXCEPT LAST COLUMN
 			y_val = test[:,-1].reshape(-1,1)
 			X_val = test[:,:-1]
 
