@@ -22,7 +22,7 @@ import datetime
 start_time = datetime.datetime.now()
 
 # inputs
-type_in = 'x_cubed_gap' 	# data type to use - drunk_bow_tie x_cubed_gap ~boston concrete ,
+type_in = 'wind' 	# data type to use - drunk_bow_tie x__gap ~boston concrete ,
 				##CHANGE THE DATA TYPE AS PER UR USE
 loss_type = 'qd_soft' 		# loss type to train on - qd_soft mve mse (mse=simple point prediction) ## CHECK FOR DIFFERENT LOSSES (gauss_like,qd_soft,mse)
 n_samples = 100		# if generating data, how many points to generate
