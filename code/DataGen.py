@@ -154,7 +154,7 @@ class DataGenerator:
 				path = '/content/Deep_Learning_Prediction_Intervals/code/canada_CSV.csv'
 				data = np.loadtxt(path,delimiter=',',skiprows=1,usecols = (1,2)) ## CHECK WHTHER TO HAVE LOADTXT OR ANYTHING ELSE
 			
-			global X_train, y_train, X_val, y_val ## ADDED BY PARUL
+			
 			# work out normalisation constants (need when unnormalising later)
 			scale_c = np.std(data[:,-1])
 			shift_c = np.mean(data[:,-1])
@@ -162,6 +162,7 @@ class DataGenerator:
 			# normalise data for ALL COLUMNS
 			for i in range(0,data.shape[1]): ## i varies from 0 to number of columns ,means it reads one by one the columns
 				# avoid zero variance features (exist one or two)
+				nonlocal X_train, y_train, X_val, y_val ## ADDED BY PARUL
 				sdev_norm = np.std(data[:,i])
 				sdev_norm = 0.001 if sdev_norm == 0 else sdev_norm
 				data[:,i] = (data[:,i] - np.mean(data[:,i]) )/sdev_norm
