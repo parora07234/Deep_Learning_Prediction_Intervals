@@ -42,7 +42,7 @@ class DataGenerator:
 		y_ideal_U = np.ones_like(X_ideal)+1. # default
 		y_ideal_L = np.ones_like(X_ideal)-1.
 		y_ideal_mean = np.ones_like(X_ideal)+0.5
-		nonlocal X_train, y_train, X_val, y_val ## ADDED BY PARUL
+# 		nonlocal X_train, y_train, X_val, y_val ## ADDED BY PARUL
 		
 		if self.type_in=="drunk_bow_tie":
 			"""
