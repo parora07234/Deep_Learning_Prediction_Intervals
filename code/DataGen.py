@@ -190,17 +190,17 @@ class DataGenerator:
 			y_val = test[:,-1].reshape(-1,1)
 			X_val = test[:,:-1]
 
-# 			# save important stuff
-# 		self.X_train = X_train
-# 		self.y_train = y_train
-# 		self.X_val = X_val
-# 		self.y_val = y_val
-# 		self.X_ideal = X_ideal
-# 		self.y_ideal_U = y_ideal_U
-# 		self.y_ideal_L = y_ideal_L
-# 		self.y_ideal_mean = y_ideal_mean
-# 		self.scale_c = scale_c
-# 		self.shift_c = shift_c
+			# save important stuff
+		self.X_train = X_train
+		self.y_train = y_train
+		self.X_val = X_val
+		self.y_val = y_val
+		self.X_ideal = X_ideal
+		self.y_ideal_U = y_ideal_U
+		self.y_ideal_L = y_ideal_L
+		self.y_ideal_mean = y_ideal_mean
+		self.scale_c = scale_c
+		self.shift_c = shift_c
 
 		return X_train, y_train, X_val, y_val
 
