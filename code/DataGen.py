@@ -42,7 +42,7 @@ class DataGenerator:
 		y_ideal_U = np.ones_like(X_ideal)+1. # default
 		y_ideal_L = np.ones_like(X_ideal)-1.
 		y_ideal_mean = np.ones_like(X_ideal)+0.5
-		global X_train, y_train, X_val, y_val ## ADDED BY PARUL
+# 		global X_train, y_train, X_val, y_val ## ADDED BY PARUL
 		
 		if self.type_in=="drunk_bow_tie":
 			"""
@@ -170,7 +170,8 @@ class DataGenerator:
 			train_size = int(round(train_prop*data.shape[0]))
 			train = data[perm[:train_size],:]
 			test = data[perm[train_size:],:]
-
+			global X_train, y_train, X_val, y_val ## ADDED BY PARUL
+			
 			y_train = train[:,-1].reshape(-1,1) ## LAST COLUMN IS CONSIDERED AS THE TARGET AND RESHAPED IN BETWEEN -1,1
 			X_train = train[:,:-1] ## INPUTS ARE ALL EXCEPT LAST COLUMN
 			y_val = test[:,-1].reshape(-1,1)
