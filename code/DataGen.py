@@ -42,13 +42,13 @@ class DataGenerator:
 		y_ideal_U = np.ones_like(X_ideal)+1. # default
 		y_ideal_L = np.ones_like(X_ideal)-1.
 		y_ideal_mean = np.ones_like(X_ideal)+0.5
-# 		global X_train, y_train, X_val, y_val ## ADDED BY PARUL
+		nonlocal X_train, y_train, X_val, y_val ## ADDED BY PARUL
 		
 		if self.type_in=="drunk_bow_tie":
 			"""
 			similar to bow tie but less linear
 			"""	
-
+		
 			X = np.random.uniform(low=-2.,high=2.,size=(n_samples,1))
 			y = 1.5*np.sin(np.pi*X[:,0]) + np.random.normal(loc=0.,scale=1.*np.power(X[:,0],2))
 			y = y.reshape([-1,1])/5.
@@ -162,7 +162,7 @@ class DataGenerator:
 			# normalise data for ALL COLUMNS
 			for i in range(0,data.shape[1]): ## i varies from 0 to number of columns ,means it reads one by one the columns
 				# avoid zero variance features (exist one or two)
-				nonlocal X_train, y_train, X_val, y_val ## ADDED BY PARUL
+# 				nonlocal X_train, y_train, X_val, y_val ## ADDED BY PARUL
 				sdev_norm = np.std(data[:,i])
 				sdev_norm = 0.001 if sdev_norm == 0 else sdev_norm
 				data[:,i] = (data[:,i] - np.mean(data[:,i]) )/sdev_norm
