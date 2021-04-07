@@ -36,7 +36,7 @@ class DataGenerator:
 		np.random.seed(seed_in)
 		scale_c=1.0 # default
 		shift_c=1.0
-
+		global X_train, y_train, X_val, y_val ## ADDED BY PARUL
 		# for ideal boundary
 		X_ideal = np.linspace(start=-bound_limit,stop=bound_limit, num=50000)
 		y_ideal_U = np.ones_like(X_ideal)+1. # default
@@ -170,7 +170,7 @@ class DataGenerator:
 			train_size = int(round(train_prop*data.shape[0]))
 			train = data[perm[:train_size],:]
 			test = data[perm[train_size:],:]
-			global X_train, y_train, X_val, y_val ## ADDED BY PARUL
+			
 			
 			y_train = train[:,-1].reshape(-1,1) ## LAST COLUMN IS CONSIDERED AS THE TARGET AND RESHAPED IN BETWEEN -1,1
 			X_train = train[:,:-1] ## INPUTS ARE ALL EXCEPT LAST COLUMN
