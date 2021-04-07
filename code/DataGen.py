@@ -191,7 +191,7 @@ class DataGenerator:
 			self.scale_c = scale_c
 			self.shift_c = shift_c
 
-			return X_train, y_train, X_val, y_val
+		return X_train, y_train, X_val, y_val
 
 
 	def ViewData(self, n_rows=5, hist=True, plot=True, print_=True):#plot and hist changed by PARUL
