@@ -26,12 +26,29 @@ class DataGenerator:
 
 		self.n_feat = n_feat
 		self.type_in = type_in
-
+		
 		return
-
+		
+	
+		
+		
+		
+		
 	
 	def CreateData(self, n_samples, seed_in=5, 
 		train_prop=0.9, bound_limit=6., n_std_devs=1.96,**kwargs):
+		
+
+			
+		np.random.seed(seed_in)
+		scale_c=1.0 # default
+		shift_c=1.0
+		
+		# for ideal boundary
+		X_ideal = np.linspace(start=-bound_limit,stop=bound_limit, num=50000)
+		y_ideal_U = np.ones_like(X_ideal)+1. # default
+		y_ideal_L = np.ones_like(X_ideal)-1.
+		y_ideal_mean = np.ones_like(X_ideal)+0.5
 		
 		self.X_train = X_train
 		self.y_train = y_train
@@ -43,16 +60,8 @@ class DataGenerator:
 		self.y_ideal_mean = y_ideal_mean
 		self.scale_c = scale_c
 		self.shift_c = shift_c
-			
-		np.random.seed(seed_in)
-		scale_c=1.0 # default
-		shift_c=1.0
 		
-		# for ideal boundary
-		X_ideal = np.linspace(start=-bound_limit,stop=bound_limit, num=50000)
-		y_ideal_U = np.ones_like(X_ideal)+1. # default
-		y_ideal_L = np.ones_like(X_ideal)-1.
-		y_ideal_mean = np.ones_like(X_ideal)+0.5
+		
 # 		nonlocal X_train, y_train, X_val, y_val ## ADDED BY PARUL
 		
 # 		if self.type_in=="drunk_bow_tie":
