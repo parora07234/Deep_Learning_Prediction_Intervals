@@ -149,7 +149,7 @@ class DataGenerator:
 				path = 'Concrete_Data.csv'
 				data = np.loadtxt(path, delimiter=',',skiprows=1)
 			elif self.type_in=="~wind":
-				path = '/content/Deep_Learning_Prediction_Intervals/code/canada_CSV.csv''
+				path = '/content/Deep_Learning_Prediction_Intervals/code/canada_CSV.csv'
 				data = np.loadtxt(path,delimiter=',',skiprows=1,usecols = (1,2)) ## CHECK WHTHER TO HAVE LOADTXT OR ANYTHING ELSE
 
 			# work out normalisation constants (need when unnormalising later)
