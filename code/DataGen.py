@@ -32,7 +32,18 @@ class DataGenerator:
 	
 	def CreateData(self, n_samples, seed_in=5, 
 		train_prop=0.9, bound_limit=6., n_std_devs=1.96,**kwargs):
-
+		
+		self.X_train = X_train
+		self.y_train = y_train
+		self.X_val = X_val
+		self.y_val = y_val
+		self.X_ideal = X_ideal
+		self.y_ideal_U = y_ideal_U
+		self.y_ideal_L = y_ideal_L
+		self.y_ideal_mean = y_ideal_mean
+		self.scale_c = scale_c
+		self.shift_c = shift_c
+			
 		np.random.seed(seed_in)
 		scale_c=1.0 # default
 		shift_c=1.0
@@ -167,7 +178,7 @@ class DataGenerator:
 				sdev_norm = 0.001 if sdev_norm == 0 else sdev_norm
 				data[:,i] = (data[:,i] - np.mean(data[:,i]) )/sdev_norm
 			
-			global X_train, y_train, X_val, y_val ## ADDED BY PARUL
+# 			global X_train, y_train, X_val, y_val ## ADDED BY PARUL
 			# split into train/test
 			perm = np.random.permutation(data.shape[0]) ## DO THE DATA PERMUTATION OF ALL THE ROWS (shuffle)
 			train_size = int(round(train_prop*data.shape[0]))
@@ -181,16 +192,16 @@ class DataGenerator:
 			X_val = test[:,:-1]
 
 			# save important stuff
-			self.X_train = X_train
-			self.y_train = y_train
-			self.X_val = X_val
-			self.y_val = y_val
-			self.X_ideal = X_ideal
-			self.y_ideal_U = y_ideal_U
-			self.y_ideal_L = y_ideal_L
-			self.y_ideal_mean = y_ideal_mean
-			self.scale_c = scale_c
-			self.shift_c = shift_c
+# 			self.X_train = X_train
+# 			self.y_train = y_train
+# 			self.X_val = X_val
+# 			self.y_val = y_val
+# 			self.X_ideal = X_ideal
+# 			self.y_ideal_U = y_ideal_U
+# 			self.y_ideal_L = y_ideal_L
+# 			self.y_ideal_mean = y_ideal_mean
+# 			self.scale_c = scale_c
+# 			self.shift_c = shift_c
 
 		return X_train, y_train, X_val, y_val
 
