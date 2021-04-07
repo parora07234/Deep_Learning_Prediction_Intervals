@@ -162,11 +162,12 @@ class DataGenerator:
 			# normalise data for ALL COLUMNS
 			for i in range(0,data.shape[1]): ## i varies from 0 to number of columns ,means it reads one by one the columns
 				# avoid zero variance features (exist one or two)
-# 				nonlocal X_train, y_train, X_val, y_val ## ADDED BY PARUL
+
 				sdev_norm = np.std(data[:,i])
 				sdev_norm = 0.001 if sdev_norm == 0 else sdev_norm
 				data[:,i] = (data[:,i] - np.mean(data[:,i]) )/sdev_norm
-
+			
+			global X_train, y_train, X_val, y_val ## ADDED BY PARUL
 			# split into train/test
 			perm = np.random.permutation(data.shape[0]) ## DO THE DATA PERMUTATION OF ALL THE ROWS (shuffle)
 			train_size = int(round(train_prop*data.shape[0]))
