@@ -18,6 +18,7 @@ real datasets:
 
 """
 
+
 class DataGenerator:
 	def __init__(self, type_in, n_feat=1):
 		# select type of data to produce
@@ -28,7 +29,7 @@ class DataGenerator:
 
 		return
 
-
+	
 	def CreateData(self, n_samples, seed_in=5, 
 		train_prop=0.9, bound_limit=6., n_std_devs=1.96,**kwargs):
 
@@ -41,7 +42,8 @@ class DataGenerator:
 		y_ideal_U = np.ones_like(X_ideal)+1. # default
 		y_ideal_L = np.ones_like(X_ideal)-1.
 		y_ideal_mean = np.ones_like(X_ideal)+0.5
-
+		global X_train, y_train, X_val, y_val ## ADDED BY PARUL
+		
 		if self.type_in=="drunk_bow_tie":
 			"""
 			similar to bow tie but less linear
