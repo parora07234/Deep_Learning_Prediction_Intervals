@@ -36,7 +36,7 @@ class DataGenerator:
 		np.random.seed(seed_in)
 		scale_c=1.0 # default
 		shift_c=1.0
-		global X_train, y_train, X_val, y_val ## ADDED BY PARUL
+		
 		# for ideal boundary
 		X_ideal = np.linspace(start=-bound_limit,stop=bound_limit, num=50000)
 		y_ideal_U = np.ones_like(X_ideal)+1. # default
@@ -153,7 +153,8 @@ class DataGenerator:
 			elif self.type_in=="~wind":
 				path = '/content/Deep_Learning_Prediction_Intervals/code/canada_CSV.csv'
 				data = np.loadtxt(path,delimiter=',',skiprows=1,usecols = (1,2)) ## CHECK WHTHER TO HAVE LOADTXT OR ANYTHING ELSE
-
+			
+			global X_train, y_train, X_val, y_val ## ADDED BY PARUL
 			# work out normalisation constants (need when unnormalising later)
 			scale_c = np.std(data[:,-1])
 			shift_c = np.mean(data[:,-1])
