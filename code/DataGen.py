@@ -170,37 +170,37 @@ class DataGenerator:
 		shift_c = np.mean(data[:,-1])
 
 			# normalise data for ALL COLUMNS
-			for i in range(0,data.shape[1]): ## i varies from 0 to number of columns ,means it reads one by one the columns
+		for i in range(0,data.shape[1]): ## i varies from 0 to number of columns ,means it reads one by one the columns
 				# avoid zero variance features (exist one or two)
 
-				sdev_norm = np.std(data[:,i])
-				sdev_norm = 0.001 if sdev_norm == 0 else sdev_norm
-				data[:,i] = (data[:,i] - np.mean(data[:,i]) )/sdev_norm
+			sdev_norm = np.std(data[:,i])
+			sdev_norm = 0.001 if sdev_norm == 0 else sdev_norm
+			data[:,i] = (data[:,i] - np.mean(data[:,i]) )/sdev_norm
 			
 # 			global X_train, y_train, X_val, y_val ## ADDED BY PARUL
 			# split into train/test
-			perm = np.random.permutation(data.shape[0]) ## DO THE DATA PERMUTATION OF ALL THE ROWS (shuffle)
-			train_size = int(round(train_prop*data.shape[0]))
-			train = data[perm[:train_size],:]
-			test = data[perm[train_size:],:]
+		perm = np.random.permutation(data.shape[0]) ## DO THE DATA PERMUTATION OF ALL THE ROWS (shuffle)
+		train_size = int(round(train_prop*data.shape[0]))
+		train = data[perm[:train_size],:]
+		test = data[perm[train_size:],:]
 			
 			
-			y_train = train[:,-1].reshape(-1,1) ## LAST COLUMN IS CONSIDERED AS THE TARGET AND RESHAPED IN BETWEEN -1,1
-			X_train = train[:,:-1] ## INPUTS ARE ALL EXCEPT LAST COLUMN
-			y_val = test[:,-1].reshape(-1,1)
-			X_val = test[:,:-1]
+		y_train = train[:,-1].reshape(-1,1) ## LAST COLUMN IS CONSIDERED AS THE TARGET AND RESHAPED IN BETWEEN -1,1
+		X_train = train[:,:-1] ## INPUTS ARE ALL EXCEPT LAST COLUMN
+		y_val = test[:,-1].reshape(-1,1)
+		X_val = test[:,:-1]
 
 			# save important stuff
-			self.X_train = X_train
-			self.y_train = y_train
-			self.X_val = X_val
-			self.y_val = y_val
-			self.X_ideal = X_ideal
-			self.y_ideal_U = y_ideal_U
-			self.y_ideal_L = y_ideal_L
-			self.y_ideal_mean = y_ideal_mean
-			self.scale_c = scale_c
-			self.shift_c = shift_c
+		self.X_train = X_train
+		self.y_train = y_train
+		self.X_val = X_val
+		self.y_val = y_val
+		self.X_ideal = X_ideal
+		self.y_ideal_U = y_ideal_U
+		self.y_ideal_L = y_ideal_L
+		self.y_ideal_mean = y_ideal_mean
+		self.scale_c = scale_c
+		self.shift_c = shift_c
 
 		return X_train, y_train, X_val, y_val
 
