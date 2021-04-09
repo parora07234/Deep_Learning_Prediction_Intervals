@@ -97,7 +97,7 @@ run=0
 for run in range(0,n_runs):
 	# generate data
 	Gen = DataGenerator(type_in=type_in)	
-	X_t, y_t, X_v, y_v = Gen.CreateData(n_samples=n_samples,seed_in=run,
+	X_train, y_train, X_val, y_val = Gen.CreateData(n_samples=n_samples,seed_in=run,
 		train_prop=train_prop, bound_limit=bound_limit, n_std_devs=n_std_devs)
 
 	print('\n--- view data ---')
@@ -108,7 +108,7 @@ for run in range(0,n_runs):
 	y_boundary = []
 	y_pred_all = []
 	
-	X_train_orig, y_train_orig = X_t, y_t
+	X_train_orig, y_train_orig = X_train, y_train
 	for b in range(0,n_bootstraps):
 
 		# bootstrap sample
