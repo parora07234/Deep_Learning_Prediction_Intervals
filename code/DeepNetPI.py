@@ -715,7 +715,7 @@ class TfNetwork:
 		return np.array(results_save)
 
 
-	def vis_train(self, save_graphs=False, is_use_val=False):
+	def vis_train(self, save_graphs=True, is_use_val=False): # save_graphs=False PARUL
 		"""
 		view graph of training history
 		"""
