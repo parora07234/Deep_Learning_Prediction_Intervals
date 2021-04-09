@@ -288,4 +288,7 @@ print('seconds taken:', round(total_time.total_seconds(),1),
 	'end_time:', end_time.strftime('%H:%M:%S'))
 
 
+show_graphs(is_boundary)
+
+
 
