@@ -173,9 +173,9 @@ class DataGenerator:
 			for i in range(0,data.shape[1]): ## i varies from 0 to number of columns ,means it reads one by one the columns
 				# avoid zero variance features (exist one or two)
 
-			sdev_norm = np.std(data[:,i])
-			sdev_norm = 0.001 if sdev_norm == 0 else sdev_norm
-			data[:,i] = (data[:,i] - np.mean(data[:,i]) )/sdev_norm
+				sdev_norm = np.std(data[:,i])
+				sdev_norm = 0.001 if sdev_norm == 0 else sdev_norm
+				data[:,i] = (data[:,i] - np.mean(data[:,i]) )/sdev_norm
 			
 # 			global X_train, y_train, X_val, y_val ## ADDED BY PARUL
 			# split into train/test
