@@ -142,7 +142,7 @@ def plot_err_bars(X_val, y_val, y_pred_U, y_pred_L,
 
 	ax.legend(loc='upper left')
 	if save_graphs:
-		fig.savefig('02_outputs/pi_err_bar.png', bbox_inches='tight')
+		fig.savefig('/content/Deep_Learning_Prediction_Intervals/images/pi_error_bar_parul.png', bbox_inches='tight')
 	else:
 		fig.show()
 
