@@ -170,7 +170,7 @@ class DataGenerator:
 			shift_c = np.mean(data[:,-1])
 
 			# normalise data for ALL COLUMNS
-		for i in range(0,data.shape[1]): ## i varies from 0 to number of columns ,means it reads one by one the columns
+			for i in range(0,data.shape[1]): ## i varies from 0 to number of columns ,means it reads one by one the columns
 				# avoid zero variance features (exist one or two)
 
 			sdev_norm = np.std(data[:,i])
