@@ -734,7 +734,7 @@ class TfNetwork:
 				+ ', lambda_in=' + str(self.lambda_in)
 		ax.set_title(title)
 		if save_graphs:
-			fig.savefig('02_outputs/fig_grad_train.png', bbox_inches='tight')
+			fig.savefig('/content/Deep_Learning_Prediction_Intervals/images/fig_parul.png', bbox_inches='tight')
 		
 		fig.show()
 
