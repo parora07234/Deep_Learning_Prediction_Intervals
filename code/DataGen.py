@@ -153,21 +153,21 @@ class DataGenerator:
 
 		# use single char '~' at start to identify real data sets
 # 		elif self.type_in[:1] == '~':
-		if self.type_in[:1] == '~':
-			if self.type_in=="~boston":
-				path = 'boston_housing_data.csv'
-				data = np.loadtxt(path,skiprows=0)
-			elif self.type_in=="~concrete":
-				path = 'Concrete_Data.csv'
-				data = np.loadtxt(path, delimiter=',',skiprows=1)
-			elif self.type_in=="~wind":
-				path = '/content/Deep_Learning_Prediction_Intervals/code/canada_CSV.csv'
-				data = np.loadtxt(path,delimiter=',',skiprows=1,usecols = (1,2)) ## CHECK WHTHER TO HAVE LOADTXT OR ANYTHING ELSE PARUL
+# 		if self.type_in[:1] == '~':
+# 			if self.type_in=="~boston":
+# 				path = 'boston_housing_data.csv'
+# 				data = np.loadtxt(path,skiprows=0)
+# 			elif self.type_in=="~concrete":
+# 				path = 'Concrete_Data.csv'
+# 				data = np.loadtxt(path, delimiter=',',skiprows=1)
+		if self.type_in=="~wind":
+			path = '/content/Deep_Learning_Prediction_Intervals/code/canada_CSV.csv'
+			data = np.loadtxt(path,delimiter=',',skiprows=1,usecols = (1,2)) ## CHECK WHTHER TO HAVE LOADTXT OR ANYTHING ELSE PARUL
 			
 			
 			# work out normalisation constants (need when unnormalising later)
-			scale_c = np.std(data[:,-1])
-			shift_c = np.mean(data[:,-1])
+		scale_c = np.std(data[:,-1])
+		shift_c = np.mean(data[:,-1])
 
 			# normalise data for ALL COLUMNS
 			for i in range(0,data.shape[1]): ## i varies from 0 to number of columns ,means it reads one by one the columns
