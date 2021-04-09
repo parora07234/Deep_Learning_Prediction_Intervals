@@ -52,7 +52,7 @@ activation='relu' 	# NN activation fns - tanh relu
 
 # plotting options
 is_use_val=True
-save_graphs=True
+save_graphs=False
 show_graphs=True                 
 # 	if is_run_test else True
 show_train=True
