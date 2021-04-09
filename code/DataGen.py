@@ -166,8 +166,8 @@ class DataGenerator:
 			
 			
 			# work out normalisation constants (need when unnormalising later)
-		scale_c = np.std(data[:,-1])
-		shift_c = np.mean(data[:,-1])
+			scale_c = np.std(data[:,-1])
+			shift_c = np.mean(data[:,-1])
 
 			# normalise data for ALL COLUMNS
 		for i in range(0,data.shape[1]): ## i varies from 0 to number of columns ,means it reads one by one the columns
@@ -179,16 +179,16 @@ class DataGenerator:
 			
 # 			global X_train, y_train, X_val, y_val ## ADDED BY PARUL
 			# split into train/test
-		perm = np.random.permutation(data.shape[0]) ## DO THE DATA PERMUTATION OF ALL THE ROWS (shuffle)
-		train_size = int(round(train_prop*data.shape[0]))
-		train = data[perm[:train_size],:]
-		test = data[perm[train_size:],:]
+			perm = np.random.permutation(data.shape[0]) ## DO THE DATA PERMUTATION OF ALL THE ROWS (shuffle)
+			train_size = int(round(train_prop*data.shape[0]))
+			train = data[perm[:train_size],:]
+			test = data[perm[train_size:],:]
 			
 			
-		y_train = train[:,-1].reshape(-1,1) ## LAST COLUMN IS CONSIDERED AS THE TARGET AND RESHAPED IN BETWEEN -1,1
-		X_train = train[:,:-1] ## INPUTS ARE ALL EXCEPT LAST COLUMN
-		y_val = test[:,-1].reshape(-1,1)
-		X_val = test[:,:-1]
+			y_train = train[:,-1].reshape(-1,1) ## LAST COLUMN IS CONSIDERED AS THE TARGET AND RESHAPED IN BETWEEN -1,1
+			X_train = train[:,:-1] ## INPUTS ARE ALL EXCEPT LAST COLUMN
+			y_val = test[:,-1].reshape(-1,1)
+			X_val = test[:,:-1]
 
 			# save important stuff
 		self.X_train = X_train
