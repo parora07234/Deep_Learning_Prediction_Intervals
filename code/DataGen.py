@@ -160,7 +160,7 @@ class DataGenerator:
 # 			elif self.type_in=="~concrete":
 # 				path = 'Concrete_Data.csv'
 # 				data = np.loadtxt(path, delimiter=',',skiprows=1)
-		if self.type_in=="~wind":
+		if self.type_in=="wind":
 			path = '/content/Deep_Learning_Prediction_Intervals/code/canada_CSV.csv'
 			data = np.loadtxt(path,delimiter=',',skiprows=1,usecols = (1,2)) ## CHECK WHTHER TO HAVE LOADTXT OR ANYTHING ELSE PARUL
 			
@@ -202,7 +202,7 @@ class DataGenerator:
 			self.scale_c = scale_c
 			self.shift_c = shift_c
 
-			return X_train, y_train, X_val, y_val
+		return X_train, y_train, X_val, y_val
 
 
 	def ViewData(self, n_rows=5, hist=True, plot=True, print_=True):#plot and hist changed by PARUL
