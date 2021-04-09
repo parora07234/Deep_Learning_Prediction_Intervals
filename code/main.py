@@ -97,8 +97,7 @@ run=0
 for run in range(0,n_runs):
 	# generate data
 	Gen = DataGenerator(type_in=type_in)	
-	X_train, y_train, X_val, y_val = Gen.CreateData(n_samples=n_samples,seed_in=run,
-		train_prop=train_prop, bound_limit=bound_limit, n_std_devs=n_std_devs)
+	X_train, y_train, X_val, y_val = Gen.CreateData(n_samples=n_samples,seed_in=run,train_prop=train_prop, bound_limit=bound_limit, n_std_devs=n_std_devs)
 
 	print('\n--- view data ---')
 	
