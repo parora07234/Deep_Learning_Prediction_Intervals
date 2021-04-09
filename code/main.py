@@ -53,8 +53,8 @@ activation='relu' 	# NN activation fns - tanh relu
 
 # plotting options
 is_use_val=True
-save_graphs=False
-show_graphs=True                 
+save_graphs=True #PARUL
+show_graphs=True       #PARUL          
 # 	if is_run_test else True
 show_train=True
 # 	if is_run_test else True
@@ -63,7 +63,7 @@ is_y_sort=False
 is_print_info=True
 var_plot=0 # lets us plot against different variables, use 0 for univariate
 is_err_bars=True
-is_norm_plot=False
+is_norm_plot=True # PARUL
 is_boundary=True # boundary stuff ONLY works for univariate - turn off for larger
 is_bound_val=False # plot validation points for boundary
 is_bound_train=True # plot training points for boundary
