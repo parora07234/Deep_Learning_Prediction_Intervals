@@ -35,7 +35,7 @@ decay_rate=0.95		# learning rate decay
 soften = 160. 		# hyper param for QD_soft
 lambda_in = 15. 	# hyper param for QD_soft
 sigma_in=0.4 		# initialise std dev of NN weights
-is_run_test=True	# if averaging over lots of runs - turns off some prints and graphs
+is_run_test=False	# if averaging over lots of runs - turns off some prints and graphs
 n_ensemble=5		# number of individual NNs in ensemble ## CHECK
 n_bootstraps=1 		# how many boostrap resamples to perform  ## pick one sample and again put ANOTHER SAMPLE
 n_runs=2 if is_run_test else 1
@@ -52,9 +52,11 @@ activation='relu' 	# NN activation fns - tanh relu
 
 # plotting options
 is_use_val=True
-save_graphs=False
-show_graphs=False if is_run_test else True
-show_train=False if is_run_test else True
+save_graphs=True
+show_graphs=True                 
+# 	if is_run_test else True
+show_train=True
+# 	if is_run_test else True
 is_y_rescale=False
 is_y_sort=False
 is_print_info=True
