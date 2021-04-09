@@ -22,7 +22,7 @@ import datetime
 start_time = datetime.datetime.now()
 
 # inputs
-type_in = 'boston' 	# data type to use - drunk_bow_tie x__gap ~boston concrete ,
+type_in = 'wind' 	# data type to use - drunk_bow_tie x__gap ~boston concrete ,
 				##CHANGE THE DATA TYPE AS PER UR USE
 loss_type = 'qd_soft' 		# loss type to train on - qd_soft mve mse (mse=simple point prediction) ## CHECK FOR DIFFERENT LOSSES (gauss_like,qd_soft,mse)
 n_samples = 100		# if generating data, how many points to generate
@@ -35,10 +35,10 @@ decay_rate=0.95		# learning rate decay
 soften = 160. 		# hyper param for QD_soft
 lambda_in = 15. 	# hyper param for QD_soft
 sigma_in=0.4 		# initialise std dev of NN weights
-is_run_test=False	# if averaging over lots of runs - turns off some prints and graphs
+is_run_test=True	# if averaging over lots of runs - turns off some prints and graphs
 n_ensemble=5		# number of individual NNs in ensemble ## CHECK
 n_bootstraps=1 		# how many boostrap resamples to perform  ## pick one sample and again put ANOTHER SAMPLE
-n_runs=20 if is_run_test else 1
+n_runs=1 if is_run_test else 1
 is_batch=True 		# train in batches?
 n_batch=100 		# batch size
 lube_perc=90. 		# if model uncertainty method = perc - 50 to 100
@@ -288,7 +288,6 @@ print('seconds taken:', round(total_time.total_seconds(),1),
 	'end_time:', end_time.strftime('%H:%M:%S'))
 
 
-show_graphs(is_boundary)
 
 
 
