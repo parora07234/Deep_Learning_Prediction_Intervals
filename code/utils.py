@@ -256,8 +256,8 @@ def plot_boundary(y_bound_all, X_boundary, y_val, X_val,
 
 	if save_graphs:
 		# fig.savefig('02_outputs/pi_boundary.png', bbox_inches='tight')
-		fig.savefig('/content/Deep_Learning_Prediction_Intervals/images/pib_ens_parul.png', format='png', dpi=1000, bbox_inches='tight')
-#earlier it was .eps PARUL
+		fig.savefig('/content/Deep_Learning_Prediction_Intervals/images/pib_ens_parul.png', format='png', bbox_inches='tight')
+#earlier it was .eps ,dpi=1000 ,PARUL
 	fig.show()
 
 	return
