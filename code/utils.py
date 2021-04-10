@@ -21,7 +21,7 @@ def np_QD_loss(y_true, y_pred_L, y_pred_U, alpha, soften = 80., lambda_in = 8.):
 	manually (with np) calc the QD_hard loss
 	"""
 	n = y_true.shape[0]
-	y_U_cap = y_pred_U > y_true.reshape(-1)
+	y_U_cap = y_pred_U > y_true.reshape(-1)    #ALL ELEMENTS GOT INTO SINGLE ROW PARUL
 	y_L_cap = y_pred_L < y_true.reshape(-1)
 	k_hard = y_U_cap*y_L_cap
 	PICP = np.sum(k_hard)/n
