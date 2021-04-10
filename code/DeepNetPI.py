@@ -720,9 +720,9 @@ class TfNetwork:
 		view graph of training history
 		"""
 		fig, ax = plt.subplots(1)
-		ax.plot(self.loss_log[:,0],self.loss_log[:,1], linewidth=0.5, color='k', label='train')
+		ax.plot(self.loss_log[:,0],self.loss_log[:,1], linewidth=1.0, color='b', label='train')
 		if is_use_val:
-			ax.plot(self.loss_log[:,0],self.loss_log[:,2], linewidth=0.5, color='r', alpha=0.6, label='test')
+			ax.plot(self.loss_log[:,0],self.loss_log[:,2], linewidth=1.0, color='g', alpha=0.6, label='test')
 			ax.legend(loc='upper right')
 		ax.set_xlabel("epochs")
 		ax.set_ylabel("loss")
