@@ -38,7 +38,7 @@ sigma_in=0.4 		# initialise std dev of NN weights
 is_run_test=True	# if averaging over lots of runs - turns off some prints and graphs
 n_ensemble=5		# number of individual NNs in ensemble ## CHECK
 n_bootstraps=1 		# how many boostrap resamples to perform  ## pick one sample and again put ANOTHER SAMPLE
-n_runs=20
+n_runs=1
 # if is_run_test else 1
 is_batch=True 		# train in batches?
 n_batch=100 		# batch size
