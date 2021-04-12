@@ -28,10 +28,10 @@ loss_type = 'qd_soft' 		# loss type to train on - qd_soft mve mse (mse=simple po
 n_samples = 10000	# if generating data, how many points to generate
 h_size = [100]	# number of hidden units in network: [50]=layer_1 of 50, [8,4]=layer_1 of 8, layer_2 of 4
 alpha = 0.05		# data points captured = (1 - alpha) ## FOR 95% PREDICTION INTERVAL
-n_epoch = 400	# number epochs to train for
+n_epoch = 300	# number epochs to train for
 optim = 'adam' 		# opitimiser - SGD adam ## ITS GRADIENT DESCENT BASED OPTIMISER 
-l_rate = 0.01        # learning rate of optimiser
-decay_rate=0.95 	# learning rate decay
+l_rate = 0.02      # learning rate of optimiser
+decay_rate=0.9 	# learning rate decay
 soften = 160. 		# hyper param for QD_soft
 lambda_in = 15. 	# hyper param for QD_soft
 sigma_in=0.4		# initialise std dev of NN weights
