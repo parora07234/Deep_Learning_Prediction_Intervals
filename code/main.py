@@ -30,11 +30,11 @@ h_size = [100]	# number of hidden units in network: [50]=layer_1 of 50, [8,4]=la
 alpha = 0.05		# data points captured = (1 - alpha) ## FOR 95% PREDICTION INTERVAL
 n_epoch = 300	# number epochs to train for
 optim = 'adam' 		# opitimiser - SGD adam ## ITS GRADIENT DESCENT BASED OPTIMISER 
-l_rate = 0.02      # learning rate of optimiser
-decay_rate=0.9 	# learning rate decay
+l_rate = 0.03     # learning rate of optimiser
+decay_rate=0.98 	# learning rate decay
 soften = 160. 		# hyper param for QD_soft
 lambda_in = 15. 	# hyper param for QD_soft
-sigma_in=0.4		# initialise std dev of NN weights
+sigma_in=0.2		# initialise std dev of NN weights
 is_run_test=True	# if averaging over lots of runs - turns off some prints and graphs
 n_ensemble=5		# number of individual NNs in ensemble ## CHECK
 n_bootstraps=1 		# how many boostrap resamples to perform  ## pick one sample and again put ANOTHER SAMPLE
