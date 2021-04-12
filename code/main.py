@@ -25,10 +25,10 @@ start_time = datetime.datetime.now()
 type_in = 'wind' 	# data type to use - drunk_bow_tie x__gap ~boston concrete ,
 				##CHANGE THE DATA TYPE AS PER UR USE
 loss_type = 'qd_soft' 		# loss type to train on - qd_soft mve mse (mse=simple point prediction) ## CHECK FOR DIFFERENT LOSSES (gauss_like,qd_soft,mse)
-n_samples = 100		# if generating data, how many points to generate
+n_samples = 10000	# if generating data, how many points to generate
 h_size = [100]	# number of hidden units in network: [50]=layer_1 of 50, [8,4]=layer_1 of 8, layer_2 of 4
 alpha = 0.05		# data points captured = (1 - alpha) ## FOR 95% PREDICTION INTERVAL
-n_epoch = 4000	# number epochs to train for
+n_epoch = 400	# number epochs to train for
 optim = 'adam' 		# opitimiser - SGD adam ## ITS GRADIENT DESCENT BASED OPTIMISER 
 l_rate = 0.01        # learning rate of optimiser
 decay_rate=0.95 	# learning rate decay
