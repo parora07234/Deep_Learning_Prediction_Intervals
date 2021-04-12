@@ -30,7 +30,7 @@ h_size = [100]	# number of hidden units in network: [50]=layer_1 of 50, [8,4]=la
 alpha = 0.05		# data points captured = (1 - alpha) ## FOR 95% PREDICTION INTERVAL
 n_epoch = 300	# number epochs to train for
 optim = 'adam' 		# opitimiser - SGD adam ## ITS GRADIENT DESCENT BASED OPTIMISER 
-l_rate = 0.04     # learning rate of optimiser
+l_rate = 0.05    # learning rate of optimiser
 decay_rate=0.98 	# learning rate decay
 soften = 160. 		# hyper param for QD_soft
 lambda_in = 15. 	# hyper param for QD_soft
