@@ -52,9 +52,9 @@ class DataGenerator:
 # 				path = 'Concrete_Data.csv'
 # 				data = np.loadtxt(path, delimiter=',',skiprows=1)
 		if self.type_in=="wind":
-			path = '/content/Deep_Learning_Prediction_Intervals/code/canada_CSV.csv'
-			data = np.loadtxt(path,delimiter=',',skiprows=1,usecols = (1,2)) ## CHECK WHTHER TO HAVE LOADTXT OR ANYTHING ELSE PARUL
-			
+			path = '/content/Deep_Learning_Prediction_Intervals/code/nasa_wind.csv'
+			data = np.loadtxt(path,delimiter=',',skiprows=1) ## CHECK WHTHER TO HAVE LOADTXT OR ANYTHING ELSE PARUL
+# 			,usecols = (1,2)
 			
 			# work out normalisation constants (need when unnormalising later)
 			scale_c = np.std(data[:,-1])
