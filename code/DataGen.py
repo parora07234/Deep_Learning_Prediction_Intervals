@@ -186,7 +186,7 @@ class DataGenerator:
 		return X_train, y_train, X_val, y_val
 
 
-	def ViewData(self, n_rows=5, hist=False, plot=False, print_=True):
+	def ViewData(self, n_rows=5, hist=True, plot=True, print_=True):
 		"""
 		print first few rows of data
 		option to view histogram of x and y
