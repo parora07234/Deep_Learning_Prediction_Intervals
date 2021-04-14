@@ -99,8 +99,9 @@ run=0
 
 for run in range(0,n_runs):
 	# generate data
-	Gen = DataGenerator(type_in="wind")	
-	X_train, y_train, X_val, y_val = Gen.CreateData(n_samples=100,seed_in=2,train_prop=0.9, bound_limit=6, n_std_devs=1.96)
+	Gen = DataGenerator(type_in="boston")	
+	X_train, y_train, X_val, y_val = Gen.CreateData(n_samples=n_samples,seed_in=run,
+		train_prop=train_prop, bound_limit=bound_limit, n_std_devs=n_std_devs)
 
 	print('\n--- view data ---')
 	
@@ -142,9 +143,10 @@ for run in range(0,n_runs):
 					' -- ensemble number', i+1, ' of ', n_ensemble)
 
 			# load network
-			NN = TfNetwork(x_size=X_train.shape[1], y_size=2, h_size=h_size, 
+			NN = TfNetwork(x_size=X_train.shape[0], y_size=1, h_size=h_size, 
 				type_in="pred_intervals", alpha=alpha, loss_type=loss_type,
 				soften=soften, lambda_in=lambda_in, sigma_in=sigma_in, activation=activation, bias_rand=False, out_biases=out_biases)
+#It was X_train.shape[1],y_size=2 earlier PARUL
 
 			# train
 			NN.train(sess, X_train, y_train, X_val, y_val,
