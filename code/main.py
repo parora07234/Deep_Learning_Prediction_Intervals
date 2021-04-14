@@ -143,7 +143,7 @@ for run in range(0,n_runs):
 					' -- ensemble number', i+1, ' of ', n_ensemble)
 
 			# load network
-			NN = TfNetwork(x_size=X_train.shape[0], y_size=1, h_size=h_size, 
+			NN = TfNetwork(x_size=X_train.shape[1], y_size=2, h_size=h_size, 
 				type_in="pred_intervals", alpha=alpha, loss_type=loss_type,
 				soften=soften, lambda_in=lambda_in, sigma_in=sigma_in, activation=activation, bias_rand=False, out_biases=out_biases)
 #It was X_train.shape[1],y_size=2 earlier PARUL
