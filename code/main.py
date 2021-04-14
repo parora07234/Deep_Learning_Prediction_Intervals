@@ -178,7 +178,7 @@ for run in range(0,n_runs):
 
 			# predicting for boundary, need to do this for each model
 			if is_boundary:
-				X_boundary.append(np.linspace(start=-bound_limit,stop=bound_limit )[:,np.newaxis])
+				X_boundary.append(np.linspace(start=-bound_limit,stop=bound_limit,num=1000 )[:,np.newaxis])
 				#num=500 was after stop PARUL
 				t, y_boundary_temp, t, t, t, t, t, t, t = NN.predict(sess, X=X_boundary[i-1],
 					y=np.zeros_like(X_boundary[i-1]),in_sess=True)
