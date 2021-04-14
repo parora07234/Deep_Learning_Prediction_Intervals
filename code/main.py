@@ -28,7 +28,7 @@ loss_type = 'qd_soft' 		# loss type to train on - qd_soft mve mse (mse=simple po
 n_samples = 10000	# if generating data, how many points to generate
 h_size = [100]	# number of hidden units in network: [50]=layer_1 of 50, [8,4]=layer_1 of 8, layer_2 of 4
 alpha = 0.05		# data points captured = (1 - alpha) ## FOR 95% PREDICTION INTERVAL
-n_epoch = 300	# number epochs to train for
+n_epoch = 100	# number epochs to train for
 optim = 'adam' 		# opitimiser - SGD adam ## ITS GRADIENT DESCENT BASED OPTIMISER 
 l_rate = 0.02    # learning rate of optimiser
 decay_rate=0.9	# learning rate decay
@@ -38,7 +38,7 @@ sigma_in=0.1		# initialise std dev of NN weights
 is_run_test=True	# if averaging over lots of runs - turns off some prints and graphs
 n_ensemble=5		# number of individual NNs in ensemble ## CHECK
 n_bootstraps=1 		# how many boostrap resamples to perform  ## pick one sample and again put ANOTHER SAMPLE
-n_runs=1
+n_runs=20
 # if is_run_test else 1
 is_batch=True 		# train in batches?
 n_batch=100 		# batch size
